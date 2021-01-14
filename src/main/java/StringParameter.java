@@ -1,4 +1,4 @@
-public class StringParameter extends Parameter<String> {
+public class StringParameter extends Parameter {
 
 	private String value;
 

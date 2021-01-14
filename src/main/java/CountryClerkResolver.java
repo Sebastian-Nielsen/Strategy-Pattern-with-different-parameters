@@ -1,15 +1,25 @@
+import java.util.ArrayList;
+
 class CountryClerkResolver extends ClerkResolver {
 
 	public CountryClerkResolver() {
-		parameters = new Parameter[1];
-		parameters[0] = new StringParameter("country", "Denmark"); // Default value is 'Denmark'
+		int length = 3;
+		parameters = new ParameterList(length);
+
+		parameters.add(new StringParameter( "country",         "Denmark"   ));
+		parameters.add(new StringParameter( "newStringParam",  "defaultVal"));
+		parameters.add(new IntegerParameter("newIntegerParam", 9999        ));
 	}
 
 	private String country;
+	private String newStringParam;
+	private int    newIntegerParam;
 
 	@Override
 	String resolveClerk() {
-		country = ((StringParameter) parameters[0]).getValue();
+		country         = parameters.getValueOfStringParameter("country");
+		newStringParam  = parameters.getValueOfStringParameter("newStringParam");
+		newIntegerParam = parameters.getValueOfIntegerParameter("newIntegerParam");
 
 		// CountryClerkResolver specific code
 

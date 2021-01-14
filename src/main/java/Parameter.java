@@ -1,4 +1,4 @@
-public abstract class Parameter<T> {
+public abstract class Parameter {
 
 	private String name;
 
@@ -9,7 +9,5 @@ public abstract class Parameter<T> {
 	public Parameter(String name) {
 		this.name = name;
 	}
-
-	abstract public T getValue();
 
 }

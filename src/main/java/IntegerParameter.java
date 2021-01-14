@@ -1,4 +1,4 @@
-public class IntegerParameter extends Parameter<Integer> {
+public class IntegerParameter extends Parameter {
 
 	private int value;
 
@@ -7,11 +7,11 @@ public class IntegerParameter extends Parameter<Integer> {
 		this.value = value;
 	}
 
-	public void setValue(Integer value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
 
-	public Integer getValue() {
+	public int getValue() {
 		return value;
 	}
 }

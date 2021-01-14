@@ -1,20 +1,19 @@
+
+
+
 public class Main {
-	public static void main(String... args) {  // Role: client
+	public static void main(String... args) throws CloneNotSupportedException {  // Role: client
 		ClerkResolver clerk_1 = new CountryClerkResolver();
 
-		Parameter[] parameters = clerk_1.getParameters();
+		ParameterList parameters = clerk_1.getParameters();
 
-		((StringParameter) getParameterWithName("country", parameters)).setValue("USA"); // Overwriting default value
+		parameters.getStringParameterOf( "country"        ).setValue("USA");
+		parameters.getStringParameterOf( "newStringParam" ).setValue("someValue");
+		parameters.getIntegerParameterOf("newIntegerParam").setValue(1234);
 
 		clerk_1.resolveClerk();
 	}
 
-	private static Parameter getParameterWithName(String paramName, Parameter[] parameters) {
-		for (Parameter param : parameters)
-			if (param.getName().equals(paramName))
-				return param;
-		throw new RuntimeException();
-	}
 
 }
 

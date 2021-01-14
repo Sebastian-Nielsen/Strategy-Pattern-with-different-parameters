@@ -1,8 +1,8 @@
 public abstract class ClerkResolver {
 
-	protected Parameter[] parameters;
+	protected ParameterList parameters;
 
-	public Parameter[] getParameters() {
+	public ParameterList getParameters() throws CloneNotSupportedException {
 		return parameters.clone();
 	}
 
