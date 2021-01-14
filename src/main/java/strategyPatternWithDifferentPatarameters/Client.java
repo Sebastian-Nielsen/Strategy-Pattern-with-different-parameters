@@ -1,7 +1,8 @@
+package strategyPatternWithDifferentPatarameters;
 
+import strategyPatternWithDifferentPatarameters.concreteClerkResolvers.CountryClerkResolver;
 
-
-public class Main {
+public class Client {
 	public static void main(String... args) throws CloneNotSupportedException {  // Role: client
 		ClerkResolver clerk_1 = new CountryClerkResolver();
 
@@ -19,13 +20,13 @@ public class Main {
 
 
 
-//public class Main {
+//public class framework.Client {
 //	public static void main(String... args) {  // Role: client
-//		ClerkResolver clerk_1 = new CountryClerkResolver();
+//		framework.ClerkResolver clerk_1 = new framework.concreteClerkResolvers.CountryClerkResolver();
 //
-//		test.Parameter[] parameters = clerk_1.getParameters();
+//		test.framework.Parameter[] parameters = clerk_1.getParameters();
 //
-//		StringParameter country = (StringParameter) parameters[0];
+//		framework.Parameter.StringParameter country = (framework.Parameter.StringParameter) parameters[0];
 //		country.setValue("USA"); // Overwriting default value
 //
 //		clerk_1.resolveClerk();
@@ -34,13 +35,13 @@ public class Main {
 //
 
 //}
-//public class Main {
+//public class framework.Client {
 //	public static void main(String... args) {  // Role: client
-//		ClerkResolver clerk_1 = new CountryClerkResolver();
+//		framework.ClerkResolver clerk_1 = new framework.concreteClerkResolvers.CountryClerkResolver();
 //
-//		test.Parameter[] parameters = clerk_1.getParameters();
+//		test.framework.Parameter[] parameters = clerk_1.getParameters();
 //
-//		StringParameter country = (StringParameter) parameters[0];
+//		framework.Parameter.StringParameter country = (framework.Parameter.StringParameter) parameters[0];
 //		country.setValue("USA"); // Overwriting default value
 //
 //		clerk_1.resolveClerk();

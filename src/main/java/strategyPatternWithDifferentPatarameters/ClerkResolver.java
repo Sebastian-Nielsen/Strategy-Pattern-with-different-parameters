@@ -1,3 +1,5 @@
+package strategyPatternWithDifferentPatarameters;
+
 public abstract class ClerkResolver {
 
 	protected ParameterList parameters;
@@ -6,6 +8,6 @@ public abstract class ClerkResolver {
 		return parameters.clone();
 	}
 
-	abstract String resolveClerk();
+	abstract public String resolveClerk();
 
 }

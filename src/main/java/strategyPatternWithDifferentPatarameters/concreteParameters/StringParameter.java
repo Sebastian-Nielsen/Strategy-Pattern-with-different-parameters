@@ -1,3 +1,7 @@
+package strategyPatternWithDifferentPatarameters.concreteParameters;
+
+import strategyPatternWithDifferentPatarameters.Parameter;
+
 public class StringParameter extends Parameter {
 
 	private String value;

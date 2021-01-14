@@ -1,3 +1,5 @@
+package strategyPatternWithDifferentPatarameters;
+
 public abstract class Parameter {
 
 	private String name;

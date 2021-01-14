@@ -1,3 +1,8 @@
+package strategyPatternWithDifferentPatarameters;
+
+import strategyPatternWithDifferentPatarameters.concreteParameters.IntegerParameter;
+import strategyPatternWithDifferentPatarameters.concreteParameters.StringParameter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +12,10 @@ public class ParameterList {
 
 	public ParameterList(int length) {
 		this.parameters = new ArrayList<>(length);
+	}
+
+	private ParameterList(List<Parameter> parameters) {
+		this.parameters = parameters;
 	}
 	
 	public void add(Parameter p) {
@@ -23,11 +32,11 @@ public class ParameterList {
 
 
 	// =================================================== ~~~~~~~~~~~~~~~~~~~~~~~~
-	// The liability of ParameterList is that we have to write a lot of boilerplate getter methods.
+	// The liability of framework.ParameterList is that we have to write a lot of boilerplate getter methods.
 	// However, because most parameter to any strategy class is a primitive type (or String), we don't
 	// have to continiously add new methods; this is thus acceptable.
 
-	// === A getter for each type of {@code Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
+	// === A getter for each type of {@code framework.Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
 	public StringParameter getStringParameterOf(String name) {
 		return (StringParameter) getParameterOf(name);
 	}
@@ -36,7 +45,7 @@ public class ParameterList {
 		return (IntegerParameter) getParameterOf(name);
 	}
 
-	// === A value of each type of {@code Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
+	// === A value of each type of {@code framework.Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
 	public String getValueOfStringParameter(String name) {
 		return ((StringParameter) getParameterOf(name)).getValue();
 	}
@@ -48,8 +57,8 @@ public class ParameterList {
 	// =================================================== ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-	public ParameterList clone() throws CloneNotSupportedException {
-		return (ParameterList) super.clone();
+	public ParameterList clone() {
+		return new ParameterList(parameters);
 	}
 	
 }

@@ -1,6 +1,11 @@
-import java.util.ArrayList;
+package strategyPatternWithDifferentPatarameters.concreteClerkResolvers;
 
-class CountryClerkResolver extends ClerkResolver {
+import strategyPatternWithDifferentPatarameters.ClerkResolver;
+import strategyPatternWithDifferentPatarameters.ParameterList;
+import strategyPatternWithDifferentPatarameters.concreteParameters.IntegerParameter;
+import strategyPatternWithDifferentPatarameters.concreteParameters.StringParameter;
+
+public class CountryClerkResolver extends ClerkResolver {
 
 	public CountryClerkResolver() {
 		int length = 3;
@@ -16,12 +21,12 @@ class CountryClerkResolver extends ClerkResolver {
 	private int    newIntegerParam;
 
 	@Override
-	String resolveClerk() {
+	public String resolveClerk() {
 		country         = parameters.getValueOfStringParameter("country");
 		newStringParam  = parameters.getValueOfStringParameter("newStringParam");
 		newIntegerParam = parameters.getValueOfIntegerParameter("newIntegerParam");
 
-		// CountryClerkResolver specific code
+		// framework.CountryClerkResolver specific code
 
 		return country;
 	}
