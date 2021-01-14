@@ -1,0 +1,10 @@
+/* Build file PasteBin, a demonstration case from the book FRDS.  */
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+

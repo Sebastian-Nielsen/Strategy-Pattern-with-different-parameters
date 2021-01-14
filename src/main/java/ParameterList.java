@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class ParameterList {
 
@@ -20,7 +19,15 @@ public class ParameterList {
 							.findFirst()
 							.orElse(null);
 	}
-	
+
+
+
+	// =================================================== ~~~~~~~~~~~~~~~~~~~~~~~~
+	// The liability of ParameterList is that we have to write a lot of boilerplate getter methods.
+	// However, because most parameter to any strategy class is a primitive type (or String), we don't
+	// have to continiously add new methods; this is thus acceptable.
+
+	// === A getter for each type of {@code Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
 	public StringParameter getStringParameterOf(String name) {
 		return (StringParameter) getParameterOf(name);
 	}
@@ -29,13 +36,17 @@ public class ParameterList {
 		return (IntegerParameter) getParameterOf(name);
 	}
 
+	// === A value of each type of {@code Parameter} is needed ~~~~~~~~~~~~~~~~~~~~~~~~
 	public String getValueOfStringParameter(String name) {
 		return ((StringParameter) getParameterOf(name)).getValue();
 	}
-	
+
 	public int getValueOfIntegerParameter(String name) {
 		return ((IntegerParameter) getParameterOf(name)).getValue();
 	}
+
+	// =================================================== ~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 	public ParameterList clone() throws CloneNotSupportedException {
 		return (ParameterList) super.clone();
